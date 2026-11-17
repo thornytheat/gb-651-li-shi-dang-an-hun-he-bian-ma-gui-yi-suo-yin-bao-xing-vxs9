@@ -5,7 +5,7 @@
 <a class="rail__item" href="/fields">字段保形</a>
 <a class="rail__item" href="/content">内容归一</a>
 <a class="rail__item" href="/reconcile">索引对账</a>
-<a class="rail__item" href="/runs">批次导出</a></nav><div class="rail__foot">规则 2026.11<br>L7 终端手册</div></aside>
+<a class="rail__item" href="/runs">批次导出</a></nav><div class="rail__foot">模板 {{ request.state.active_template.active_version|default('2026.11') }} · r{{ request.state.active_template.revision|default(1) }}<br>L7 终端手册</div></aside>
         <div class="work"><header class="topbar"><span class="topbar__title">{{ title }}</span><span class="signal">ENCODING PROBE :: BYTE SAFE</span><button class="btn" id="refresh">刷新</button></header>
         <main class="content"><div class="kpis"><div class="kpi"><b>批次</b><span>RUN-261116</span></div><div class="kpi"><b>输入</b><span>{{ data.input_count|default(12) }}</span></div><div class="kpi"><b>有效</b><span>{{ data.valid_count|default(9) }}</span></div><div class="kpi"><b>隔离</b><span>{{ data.quarantine_count|default(3) }}</span></div><div class="kpi"><b>状态</b><span class="sev">复核</span></div></div>
-        {% block content %}{% endblock %}</main><footer class="statusbar"><span>v2026.11</span><span>Asia/Shanghai</span><span>/api/health</span></footer></div></div><script src="/static/app.js"></script><script src="/static/table.js"></script></body></html>
+        {% block content %}{% endblock %}</main><footer class="statusbar"><span>v{{ request.state.active_template.active_version|default('2026.11') }}</span><span>Asia/Shanghai</span><span>/api/health</span></footer></div></div><script src="/static/app.js"></script><script src="/static/table.js"></script>{% block scripts %}{% endblock %}</body></html>
